@@ -13,7 +13,7 @@ export function HomeHeader() {
     return (
         <HStack bg="gray.600" pt={16} pb={8} px={8} alignItems="center">
             <UserPhoto
-                source={{ uri: 'https://github.com/rodrigorgtic.png ' }}
+                source={{ uri: 'https://github.com/rodrigorgtic.png' }}
                 alt="Imagem do usuário"
                 size={16}
                 mr={4}

@@ -1,10 +1,11 @@
 
 import { StatusBar } from 'react-native';
-import { NativeBaseProvider} from 'native-base'
+import { NativeBaseProvider } from 'native-base'
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { Loading } from '@components/Loading';
 import { THEME } from './src/theme';
 import { Routes } from './src/routes';
+import { AuthContextProvider } from '@contexts/AuthContext';
 
 
 export default function App() {
@@ -14,13 +15,20 @@ export default function App() {
   return (
     <NativeBaseProvider theme={THEME}>
 
-      <StatusBar 
+      <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
+      <AuthContextProvider>
 
-      {fontsLoaded ? <Routes /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
+
+      </AuthContextProvider>
+
+
+
+
 
 
     </NativeBaseProvider>

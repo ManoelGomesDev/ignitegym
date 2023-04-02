@@ -9,10 +9,20 @@ import { Button } from '@components/Button'
 import { Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
+import { useAuth } from '@hooks/useAuth'
+
+type FormDataProps = {
+    email: string;
+    password: string;
+}
+
 export function SignIn() {
 
+    const {setUser} = useAuth()
 
     const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+    
 
     function handleNewAccount(){
         navigation.navigate('signUp')
